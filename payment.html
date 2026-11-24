@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>გადახდა</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="payment.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+</head>
+<body>
+
+<nav>
+  <div class="brand">
+    <div class="brand-logo"><a href="index.html">SR</a></div>
+    <div class="brand-text">
+      <span class="brand-name">Step Railway</span>
+      
+    </div>
+  </div>
+  <a href="passengers.html" class="btn-nav">უკან მგზავრებზე</a>
+  <div id="navAuth" class="nav-auth"></div>
+</nav>
+
+<div class="hero" style="min-height:200px; padding-bottom:40px;">
+  <div class="hero-text">
+    <h1>გადახდა</h1>
+  </div>
+</div>
+
+<div class="demo-payment-notice">
+  <strong>სასწავლო დემო</strong>
+  <p>
+    ეს არის დემო გადახდა. რეალური თანხა არ ჩამოიჭრება.
+    არ შეიყვანოთ რეალური საბანკო ბარათის მონაცემები.
+  </p>
+</div>
+
+<div class="payment-wrapper" id="paymentSection">
+  <div class="payment-left">
+
+    <div class="form-section">
+      <h2>ბარათის მონაცემები</h2>
+      <div class="form-group">
+        <label>ბარათის ნომერი</label>
+        <input type="text" id="cardNumber" placeholder="0000 0000 0000 0000" maxlength="19" oninput="formatCardNumber(this)" />
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>მოქმედების ვადა</label>
+          <input type="text" id="cardExpiry" placeholder="MM/YY" maxlength="5" oninput="formatExpiry(this)" />
+        </div>
+        <div class="form-group">
+          <label>CVC / CVV</label>
+          <input type="text" id="cardCvc" placeholder="123" maxlength="3" />
+        </div>
+      </div>
+      <div class="form-group">
+        <label>ბარათის მფლობელი</label>
+        <input type="text" id="cardName" placeholder="GIORGI BERIDZE" />
+      </div>
+    </div>
+
+  </div>
+
+  <div class="invoice-box">
+    <h3>შეკვეთის შეჯამება</h3>
+    <div class="invoice-route" id="invoiceRoute"></div>
+    <div class="invoice-date" id="invoiceDate"></div>
+    <hr/>
+    <div id="invoicePassengers"></div>
+    <hr/>
+    <div class="invoice-total">სულ: <span id="invoiceTotal">0₾</span></div>
+<button class="btn-register" onclick="pay()">ბილეთის რეგისტრაცია</button>
+  </div>
+</div>
+
+<div class="payment-wrapper" id="successSection" style="display:none;">
+  <div class="success-box">
+    <div class="success-icon"><svg class="success-lucide" viewBox="0 0 24 24" fill="none" stroke="rgba(74,222,128,1)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M7 13l3 3 7-7"/></svg></div>
+<h2>ბილეთის რეგისტრაცია წარმატებით დასრულდა!</h2>
+    <div class="ticket-card" id="ticketCard"></div>
+    <div style="margin-top:20px; text-align:center;">
+      <p style="font-size:0.8rem;color:rgba(160,155,175,1);margin-bottom:10px;">სკანირებით შეამოწმეთ ბილეთი</p>
+      <div id="qrCode" style="display:inline-block; padding:12px; background:white; border-radius:12px; box-shadow:0 2px 16px rgba(0,0,0,0.1);"></div>
+    </div>
+    <div class="success-actions">
+      <button class="btn-print" onclick="window.print()"> ბილეთის დაბეჭდვა</button>
+      <a href="index.html" class="btn-register" style="text-decoration:none; text-align:center;">მთავარ გვერდზე დაბრუნება</a>
+    </div>
+  </div>
+</div>
+
+<div id="toast" class="toast"></div>
+
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-section">
+      <h3>Railway</h3>
+      <p>იმგზავრე მარტივად და კომფორტულად მთელ საქართველოში.</p>
+    </div>
+    <div class="footer-section">
+      <h4>სწრაფი ბმულები</h4>
+      <ul>
+        <li><a href="index.html">მთავარი</a></li>
+        <li><a href="trips.html">რეისები</a></li>
+      </ul>
+    </div>
+    <div class="footer-section">
+      <h4>კონტაქტი</h4>
+      <p><svg class="footer-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> თბილისი, საქართველო</p>
+      <p><svg class="footer-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6.08 6.08l1-1a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg> +995 555 00 00 00</p>
+      <p><svg class="footer-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg> <a href="mailto:info@railway.ge">info@railway.ge</a></p>
+    </div>
+  </div>
+  <div class="footer-bottom">© 2025 Step Railway. ყველა უფლება დაცულია.</div>
+</footer>
+
+  <script src="auth.js"></script>
+  <script src="payment.js"></script>
+</body>
+</html>

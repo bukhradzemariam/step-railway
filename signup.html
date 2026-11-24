@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>რეგისტრაცია — Step Railway</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="auth.css"/>
+</head>
+<body>
+
+<nav>
+  <div class="brand">
+    <div class="brand-logo"><a href="index.html">SR</a></div>
+    <div class="brand-text">
+      <span class="brand-name">Step Railway</span>
+    </div>
+  </div>
+  <a href="signin.html" class="btn-nav"><svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg> შესვლა</a>
+</nav>
+
+<div class="hero" style="min-height:220px; padding-bottom:40px;">
+  <div class="hero-text">
+    <h1>რეგისტრაცია</h1>
+    <p class="hero-sub">შექმენით ახალი ანგარიში</p>
+  </div>
+</div>
+
+<div class="auth-wrapper">
+  <div class="auth-card">
+    <h2>ანგარიშის შექმნა</h2>
+    <p class="auth-sub">შეავსეთ მონაცემები</p>
+
+    <div class="auth-form-group">
+      <label>სახელი</label>
+      <input type="text" id="firstName" placeholder="გიორგი" autocomplete="given-name"/>
+    </div>
+
+    <div class="auth-form-group">
+      <label>გვარი</label>
+      <input type="text" id="lastName" placeholder="ბერიძე" autocomplete="family-name"/>
+    </div>
+
+    <div class="auth-form-group">
+      <label>ასაკი</label>
+      <input type="number" id="age" placeholder="25" min="1" max="120"/>
+    </div>
+
+    <div class="auth-form-group">
+      <label>ტელეფონი</label>
+      <input type="tel" id="phone" placeholder="+995 5XX XX XX XX" autocomplete="tel"/>
+    </div>
+
+    <div class="auth-form-group">
+      <label>მისამართი</label>
+      <input type="text" id="address" placeholder="თბილისი, რუსთაველის გამზ." autocomplete="street-address"/>
+    </div>
+
+    <div class="auth-form-group">
+      <label>საფოსტო კოდი</label>
+      <input type="text" id="zipcode" placeholder="0100"/>
+    </div>
+
+    <div class="auth-form-group">
+      <label>სქესი</label>
+      <select id="gender" >
+        <option value="MALE">მამრობითი</option>
+        <option value="FEMALE">მდედრობითი</option>
+      </select>
+    </div>
+
+    <div class="auth-form-group">
+      <label>ელ. ფოსტა</label>
+      <input type="email" id="email" placeholder="example@mail.com" autocomplete="email"/>
+    </div>
+
+    <div class="auth-form-group">
+      <label>პაროლი (მინ. 8 სიმბოლო)</label>
+      <input type="password" id="password" placeholder="••••••••" autocomplete="new-password"/>
+    </div>
+
+    <div class="auth-form-group">
+      <label>პაროლის დადასტურება</label>
+      <input type="password" id="confirmPassword" placeholder="••••••••" autocomplete="new-password"/>
+    </div>
+
+    <button class="btn-auth-submit" id="signupBtn" onclick="doSignUp()">რეგისტრაცია</button>
+
+    <p class="auth-switch">
+      უკვე გაქვთ ანგარიში? <a href="signin.html">შესვლა</a>
+    </p>
+  </div>
+</div>
+
+<div id="toast" class="toast"></div>
+
+
+  <script src="auth.js"></script>
+  <script src="signup.js"></script>
+</body>
+</html>

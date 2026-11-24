@@ -1,0 +1,403 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.payment-wrapper {
+  max-width: 1100px;
+  margin: 22px auto 80px;
+  padding: 0 24px;
+  display: flex;
+  gap: 26px;
+  align-items: flex-start;
+}
+.payment-left {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.form-section {
+  background: var(--card);
+  border-radius: 16px;
+  padding: 22px 26px;
+  border: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.form-section h2 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text);
+  padding-bottom: 11px;
+  border-bottom: 1px solid var(--border);
+}
+
+.form-row {
+  display: flex;
+  gap: 14px;
+}
+.form-group {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.form-group label {
+  font-size: 0.6rem;
+  font-weight: 700;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.form-group input {
+  border: 1.5px solid var(--white-faint3);
+  border-radius: 11px;
+  padding: 10px 13px;
+  font-family: "Inter", sans-serif;
+  font-size: 0.9rem;
+  color: var(--text);
+  background: var(--white-faint2);
+  outline: none;
+  transition: border 0.2s;
+  color-scheme: dark;
+}
+.form-group input:focus {
+  border-color: var(--red-mid);
+}
+
+.invoice-box {
+  width: 295px;
+  flex-shrink: 0;
+  background: var(--card);
+  border-radius: 16px;
+  padding: 22px;
+  border: 1px solid var(--border);
+  position: sticky;
+  top: 20px;
+  display: flex;
+  flex-direction: column;
+}
+.invoice-box h3 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--text);
+  margin-bottom: 13px;
+}
+.invoice-route {
+  font-size: 0.97rem;
+  font-weight: 700;
+  color: var(--red-light);
+  margin-bottom: 3px;
+}
+.invoice-date {
+  font-size: 0.8rem;
+  color: var(--text-soft);
+  margin-bottom: 13px;
+}
+.invoice-box hr {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 11px 0;
+}
+.invoice-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-bottom: 7px;
+  gap: 7px;
+}
+.invoice-row span:last-child {
+  font-weight: 700;
+  color: var(--red-light);
+}
+.invoice-total {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--text);
+  text-align: right;
+  margin-bottom: 15px;
+}
+.invoice-total span {
+  color: var(--red);
+}
+
+.btn-register {
+  background: var(--red);
+  color: white;
+  border: none;
+  padding: 13px;
+  border-radius: 12px;
+  font-family: "Inter", sans-serif;
+  font-size: 0.93rem;
+  font-weight: 700;
+  cursor: pointer;
+  width: 100%;
+  letter-spacing: 0.3px;
+  transition:
+    background 0.2s,
+    box-shadow 0.2s;
+}
+.btn-register:hover {
+  background: var(--red-dark);
+  box-shadow: 0 0 30px var(--red-border);
+}
+
+.success-box {
+  flex: 1;
+  background: var(--card);
+  border-radius: 16px;
+  padding: 40px;
+  border: 1px solid var(--border);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+}
+.success-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.success-box h2 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--text);
+}
+.success-box h2::after {
+  content: "";
+  display: block;
+  width: 44px;
+  height: 2px;
+  background: var(--red);
+  margin: 12px auto 0;
+  border-radius: 2px;
+}
+
+.ticket-card {
+  width: 100%;
+  max-width: 580px;
+  background: var(--surface);
+  border-radius: 16px;
+  padding: 26px;
+  text-align: left;
+  border: 1px solid var(--white-faint4);
+}
+.ticket-card .ticket-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 18px;
+  padding-bottom: 14px;
+  border-bottom: 2px dashed var(--red-dashed);
+}
+.ticket-card .ticket-logo {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.ticket-card .ticket-id {
+  font-size: 0.76rem;
+  color: var(--text-soft);
+}
+.ticket-card .ticket-id span {
+  font-weight: 700;
+  color: var(--text);
+}
+
+.ticket-route {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+.ticket-station {
+  flex: 1;
+}
+.ticket-station .city {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: var(--text);
+}
+.ticket-station .time {
+  font-size: 0.84rem;
+  color: var(--red-light);
+  font-weight: 600;
+}
+.ticket-arrow {
+  font-size: 1.3rem;
+  color: var(--text-soft);
+}
+
+.ticket-info-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 11px;
+  margin-bottom: 18px;
+}
+.ticket-info-item label {
+  font-size: 0.6rem;
+  font-weight: 700;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  display: block;
+  margin-bottom: 2px;
+}
+.ticket-info-item span {
+  font-size: 0.87rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.ticket-passengers {
+  border-top: 1px solid var(--border);
+  padding-top: 14px;
+}
+.ticket-passengers h4 {
+  font-size: 0.6rem;
+  font-weight: 700;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  margin-bottom: 9px;
+}
+.ticket-passenger-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.83rem;
+  color: var(--text-muted);
+  padding: 6px 0;
+  border-bottom: 1px solid var(--white-faint);
+}
+.ticket-passenger-row:last-child {
+  border-bottom: none;
+}
+
+.success-actions {
+  display: flex;
+  gap: 11px;
+  width: 100%;
+  max-width: 380px;
+  flex-direction: column;
+}
+.btn-print {
+  background: var(--red);
+  color: white;
+  border: none;
+  padding: 13px;
+  border-radius: 12px;
+  font-family: "Inter", sans-serif;
+  font-size: 0.93rem;
+  font-weight: 700;
+  cursor: pointer;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition:
+    background 0.2s,
+    box-shadow 0.2s;
+}
+.btn-print:hover {
+  background: var(--red-dark);
+  box-shadow: 0 0 28px var(--red-border);
+}
+
+.footer {
+  background: var(--card);
+  color: var(--text);
+  margin-top: 80px;
+  padding-top: 48px;
+  border-top: 1px solid var(--border);
+}
+.footer-container {
+  max-width: 1100px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 0 52px;
+  gap: 32px;
+}
+.footer-section {
+  flex: 1;
+  min-width: 200px;
+}
+.footer-section h3 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 12px;
+}
+.footer-section h4 {
+  font-size: 0.63rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+.footer-section p {
+  font-size: 0.83rem;
+  color: var(--text-soft);
+  line-height: 1.9;
+}
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+.footer-section ul li {
+  margin-bottom: 8px;
+}
+.footer-section a {
+  color: var(--text-soft);
+  text-decoration: none;
+  font-size: 0.83rem;
+  transition: color 0.2s;
+}
+.footer-section a:hover {
+  color: var(--red);
+}
+.footer-bottom {
+  text-align: center;
+  padding: 16px;
+  margin-top: 32px;
+  background: var(--shadow-soft);
+  font-size: 0.75rem;
+  color: var(--text-dim);
+}
+
+@media (max-width: 900px) {
+  .payment-wrapper {
+    flex-direction: column;
+  }
+  .invoice-box {
+    width: 100%;
+    position: static;
+  }
+  .form-row {
+    flex-direction: column;
+  }
+  .ticket-info-grid {
+    grid-template-columns: 1fr;
+  }
+  .footer-container {
+    padding: 0 20px;
+  }
+}

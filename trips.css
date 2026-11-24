@@ -1,0 +1,218 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.trips-wrapper {
+  max-width: 900px;
+  margin: 24px auto 80px;
+  padding: 0 24px;
+}
+
+.search-summary {
+  background: var(--card);
+  padding: 22px 28px;
+  border-radius: 16px;
+  margin-bottom: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--red);
+}
+.search-summary h2 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--text);
+  margin-bottom: 3px;
+}
+.search-summary p {
+  font-size: 0.83rem;
+  color: var(--text-soft);
+}
+
+.trips-grid {
+  display: grid;
+  gap: 13px;
+}
+
+.trip-card {
+  background: var(--card);
+  border-radius: 16px;
+  padding: 22px 26px;
+  border: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 14px;
+  transition: all 0.22s;
+  position: relative;
+  overflow: hidden;
+}
+.trip-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--red);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s;
+}
+.trip-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--red-faint-border);
+  box-shadow: 0 10px 36px var(--red-soft);
+}
+.trip-card:hover::before {
+  transform: scaleX(1);
+}
+
+.trip-left {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.trip-left h3 {
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--text-soft);
+}
+.trip-time {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.65rem;
+  font-weight: 800;
+  color: var(--text);
+  letter-spacing: -0.5px;
+  line-height: 1;
+}
+.trip-arrive {
+  font-size: 0.78rem;
+  color: var(--text-dim);
+}
+.trip-price {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--red-light);
+  background: var(--red-soft);
+  border: 1px solid var(--red-dashed);
+  padding: 4px 13px;
+  border-radius: 8px;
+  display: inline-block;
+  margin-top: 3px;
+}
+
+.trip-card button {
+  background: var(--red);
+  color: white;
+  border: none;
+  padding: 12px 28px;
+  border-radius: 11px;
+  font-family: "Inter", sans-serif;
+  font-size: 0.88rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition:
+    background 0.2s,
+    box-shadow 0.2s,
+    transform 0.1s;
+  white-space: nowrap;
+  letter-spacing: 0.3px;
+}
+.trip-card button:hover {
+  background: var(--red-dark);
+  box-shadow: 0 0 26px var(--red-border);
+  transform: scale(1.03);
+}
+
+.footer {
+  background: var(--card);
+  color: var(--text);
+  margin-top: 60px;
+  padding-top: 44px;
+  border-top: 1px solid var(--border);
+}
+.footer-container {
+  max-width: 1100px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 0 52px;
+  gap: 32px;
+}
+.footer-section {
+  flex: 1;
+  min-width: 200px;
+}
+.footer-section h3 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 12px;
+}
+.footer-section h4 {
+  font-size: 0.63rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+.footer-section p {
+  font-size: 0.83rem;
+  color: var(--text-soft);
+  line-height: 1.9;
+}
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+.footer-section ul li {
+  margin-bottom: 8px;
+}
+.footer-section a {
+  color: var(--text-soft);
+  text-decoration: none;
+  font-size: 0.83rem;
+  transition: color 0.2s;
+}
+.footer-section a:hover {
+  color: var(--red);
+}
+.footer-bottom {
+  text-align: center;
+  padding: 16px;
+  margin-top: 32px;
+  background: var(--shadow-soft);
+  font-size: 0.76rem;
+  color: var(--text-dim);
+}
+
+@media (max-width: 900px) {
+  .trips-wrapper {
+    padding: 0 16px;
+  }
+  .trip-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .trip-card button {
+    width: 100%;
+    text-align: center;
+  }
+  .search-summary {
+    flex-direction: column;
+  }
+  .footer-container {
+    padding: 0 20px;
+  }
+}

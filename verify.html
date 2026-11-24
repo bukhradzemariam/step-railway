@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="ka">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>იმეილის დადასტურება — Step Railway</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="auth.css" />
+  </head>
+  <body>
+    <nav>
+      <div class="brand">
+        <div class="brand-logo"><a href="index.html">SR</a></div>
+        <div class="brand-text">
+          <span class="brand-name">Step Railway</span>
+        </div>
+      </div>
+      <a href="index.html" class="btn-nav"
+        ><svg
+          class="btn-icon"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <polyline points="15 18 9 12 15 6" />
+        </svg>
+        მთავარი</a
+      >
+    </nav>
+
+    <div class="hero" style="min-height: 220px; padding-bottom: 40px">
+      <div class="hero-text">
+        <h1>იმეილის დადასტურება</h1>
+        <p class="hero-sub">შეამოწმეთ თქვენი ელ. ფოსტა</p>
+      </div>
+    </div>
+
+    <div class="auth-wrapper">
+      <div class="auth-card">
+        <h2>დაადასტურეთ ანგარიში</h2>
+
+        <p class="auth-sub" id="verifySubText">
+          თქვენს მეილზე გაიგზავნა დადასტურების ბმული. გახსენით ბმული ანგარიშის
+          გასააქტიურებლად.
+        </p>
+
+        <p class="auth-switch">
+          უკვე დაადასტურეთ? <a href="signin.html">შესვლა</a>
+        </p>
+      </div>
+    </div>
+
+    <div id="toast" class="toast"></div>
+
+    <script src="auth.js"></script>
+    <script src="verify.js"></script>
+  </body>
+</html>

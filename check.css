@@ -1,0 +1,260 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.check-wrapper {
+  max-width: 700px;
+  margin: 28px auto 80px;
+  padding: 0 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.check-form {
+  background: var(--card);
+  border-radius: 16px;
+  padding: 26px;
+  border: 1px solid var(--border);
+}
+.check-form h2 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 15px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+}
+
+.input-row {
+  display: flex;
+  gap: 11px;
+}
+.input-row input {
+  flex: 1;
+  border: 1.5px solid var(--white-faint3);
+  border-radius: 11px;
+  padding: 11px 14px;
+  font-family: "Inter", sans-serif;
+  font-size: 0.87rem;
+  color: var(--text);
+  background: var(--white-faint2);
+  outline: none;
+  transition: border-color 0.2s;
+  color-scheme: dark;
+}
+.input-row input:focus {
+  border-color: var(--red-mid);
+}
+.input-row button {
+  background: var(--red);
+  color: white;
+  border: none;
+  padding: 11px 22px;
+  border-radius: 11px;
+  font-family: "Inter", sans-serif;
+  font-size: 0.88rem;
+  font-weight: 700;
+  cursor: pointer;
+  white-space: nowrap;
+  transition:
+    background 0.2s,
+    box-shadow 0.2s;
+}
+.input-row button:hover {
+  background: var(--red-dark);
+  box-shadow: 0 0 22px var(--red-border);
+}
+
+.ticket-result {
+  background: var(--card);
+  border-radius: 16px;
+  padding: 26px;
+  border: 1px solid var(--border);
+}
+
+.ticket-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 18px;
+  padding-bottom: 15px;
+  border-bottom: 2px dashed var(--red-dashed);
+}
+.ticket-logo {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.ticket-status {
+  font-size: 0.76rem;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: 20px;
+}
+.ticket-status.confirmed {
+  background: var(--green-soft);
+  color: var(--green);
+  border: 1px solid var(--green-border);
+}
+.ticket-status.pending {
+  background: var(--yellow-soft);
+  color: var(--yellow);
+  border: 1px solid var(--yellow-border);
+}
+.ticket-id-text {
+  font-size: 0.74rem;
+  color: var(--text-soft);
+  margin-top: 3px;
+}
+.ticket-id-text span {
+  font-weight: 700;
+  color: var(--text);
+}
+
+.ticket-route {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+.ticket-station {
+  flex: 1;
+}
+.ticket-station .city {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: var(--text);
+}
+.ticket-station .time {
+  font-size: 0.85rem;
+  color: var(--red-light);
+  font-weight: 600;
+}
+.ticket-arrow {
+  font-size: 1.3rem;
+  color: var(--text-soft);
+}
+
+.ticket-info-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 11px;
+  margin-bottom: 18px;
+}
+.ticket-info-item label {
+  font-size: 0.62rem;
+  font-weight: 700;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  display: block;
+  margin-bottom: 2px;
+}
+.ticket-info-item span {
+  font-size: 0.87rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.ticket-passengers {
+  border-top: 1px solid var(--border);
+  padding-top: 15px;
+  margin-bottom: 18px;
+}
+.ticket-passengers h4 {
+  font-size: 0.62rem;
+  font-weight: 700;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  margin-bottom: 9px;
+}
+.ticket-passenger-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.83rem;
+  color: var(--text-muted);
+  padding: 6px 0;
+  border-bottom: 1px solid var(--white-faint);
+}
+.ticket-passenger-row:last-child {
+  border-bottom: none;
+}
+
+.ticket-actions {
+  display: flex;
+  gap: 11px;
+  padding-top: 15px;
+  border-top: 1px solid var(--border);
+}
+.btn-print {
+  background: var(--red);
+  color: white;
+  border: none;
+  padding: 11px 22px;
+  border-radius: 11px;
+  font-family: "Inter", sans-serif;
+  font-size: 0.87rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  transition:
+    background 0.2s,
+    box-shadow 0.2s;
+}
+.btn-print:hover {
+  background: var(--red-dark);
+  box-shadow: 0 0 22px var(--red-border);
+}
+.btn-cancel {
+  background: var(--white-faint2);
+  color: var(--red-lighter);
+  border: 1px solid var(--red-faint-border);
+  padding: 11px 22px;
+  border-radius: 11px;
+  font-family: "Inter", sans-serif;
+  font-size: 0.87rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.btn-cancel:hover {
+  background: var(--red-hover-bg);
+}
+
+.not-found {
+  background: var(--card);
+  border-radius: 16px;
+  padding: 40px;
+  text-align: center;
+  border: 1px solid var(--border);
+  color: var(--text-soft);
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+@media (max-width: 600px) {
+  .ticket-info-grid {
+    grid-template-columns: 1fr;
+  }
+  .input-row {
+    flex-direction: column;
+  }
+  .ticket-actions {
+    flex-direction: column;
+  }
+}
